@@ -7,6 +7,7 @@ interface createAppointmentDTO {
     date: Date;
 }
 
+
 class AppointmentsRepository {
     private appointments: Appointment[];
 
