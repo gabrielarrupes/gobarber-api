@@ -1,4 +1,4 @@
-import { uuid } from 'uuidv4';
+import { randomUUID } from 'node:crypto';
 
 
 
@@ -10,7 +10,7 @@ class Appointment {
     date: Date;
                                     // params: tipo dos dados, variável que quero omitir
     constructor ({provider, date}: Omit<Appointment, 'id'> ) {
-        this.id = uuid()
+        this.id = randomUUID();
         this.provider = provider;
         this.date = date;
 
