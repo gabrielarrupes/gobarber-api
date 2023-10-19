@@ -1,21 +1,16 @@
-import { randomUUID } from 'node:crypto';
-
-
-
+import {Entity, Column, PrimaryGeneratedColumn} from "typeorm"
+@Entity('appointments')
 class Appointment {
+
+    @PrimaryGeneratedColumn('uuid')
     id: string;
 
+    @Column()
     provider: string;
 
+    @Column('timestamp with time zone')
     date: Date;
-                                    // params: tipo dos dados, variável que quero omitir
-    constructor ({provider, date}: Omit<Appointment, 'id'> ) {
-        this.id = randomUUID();
-        this.provider = provider;
-        this.date = date;
-
-    }
-    
+  
 }
 
 export default Appointment
